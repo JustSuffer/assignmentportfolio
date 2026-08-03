@@ -6,20 +6,20 @@ const Skills = () => {
   const categories = ['All', 'Frontend', 'Backend & AI', 'Tools & Cloud'];
 
   const skillsData = [
-    { name: 'React 19 & JSX', category: 'Frontend', level: 95, icon: '⚛️', desc: 'Component architecture, hooks, state management, SPA routing' },
-    { name: 'JavaScript (ES6+)', category: 'Frontend', level: 92, icon: '🟨', desc: 'Async/Await, DOM manipulation, functional programming' },
-    { name: 'HTML5 & CSS3 / Modern CSS', category: 'Frontend', level: 95, icon: '🎨', desc: 'Flexbox, Grid, CSS animations, responsive layouts' },
-    { name: 'Vite & Build Tools', category: 'Frontend', level: 90, icon: '⚡', desc: 'Fast HMR, module bundling, production optimization' },
+    { name: 'React 19 & JSX', category: 'Frontend', level: 95, desc: 'Modular components, custom hooks, state architecture' },
+    { name: 'JavaScript (ES6+)', category: 'Frontend', level: 92, desc: 'Async execution, functional patterns, DOM management' },
+    { name: 'HTML5 & CSS3 / Modern CSS', category: 'Frontend', level: 95, desc: 'Flexbox, Grid, clean typography, responsive design' },
+    { name: 'Vite & Build Tooling', category: 'Frontend', level: 90, desc: 'HMR development, bundle optimization, tree-shaking' },
     
-    { name: 'Python & AI Scripting', category: 'Backend & AI', level: 88, icon: '🐍', desc: 'LLM pipelines, data processing, backend automation' },
-    { name: 'AI & LLM Integration', category: 'Backend & AI', level: 94, icon: '🧠', desc: 'Prompt engineering, Agent orchestration, OpenAI/Gemini APIs' },
-    { name: 'Node.js & Express', category: 'Backend & AI', level: 85, icon: '🟢', desc: 'REST APIs, serverless functions, middleware design' },
-    { name: 'REST APIs & JSON Data', category: 'Backend & AI', level: 90, icon: '🔌', desc: 'API design, payload handling, async data fetching' },
+    { name: 'Python & AI Scripting', category: 'Backend & AI', level: 88, desc: 'LLM data pipelines, automation scripts, backend APIs' },
+    { name: 'AI & LLM Integration', category: 'Backend & AI', level: 94, desc: 'Prompt orchestration, Agent workflows, OpenAI/Gemini APIs' },
+    { name: 'Node.js & Express', category: 'Backend & AI', level: 85, desc: 'RESTful API architecture, middleware, JSON payloads' },
+    { name: 'REST APIs & Data Contracts', category: 'Backend & AI', level: 90, desc: 'Async data fetching, payload validation, endpoint design' },
 
-    { name: 'Netlify & CI/CD Deployment', category: 'Tools & Cloud', level: 95, icon: '☁️', desc: 'Production builds, netlify.toml, redirect rules, custom domains' },
-    { name: 'Git & GitHub', category: 'Tools & Cloud', level: 92, icon: '📦', desc: 'Version control, branch workflows, release tagging' },
-    { name: 'ESLint & Code Hygiene', category: 'Tools & Cloud', level: 88, icon: '🧹', desc: 'Linting rules, syntax checking, code formatting' },
-    { name: 'SEO & Performance Audit', category: 'Tools & Cloud', level: 90, icon: '📈', desc: 'Lighthouse scoring, web vitals, semantic tags' }
+    { name: 'Netlify & CI/CD Pipelines', category: 'Tools & Cloud', level: 95, desc: 'netlify.toml configuration, SPA redirects, automated builds' },
+    { name: 'Git & GitHub Workflows', category: 'Tools & Cloud', level: 92, desc: 'Version control, branch management, release tagging' },
+    { name: 'ESLint & Code Hygiene', category: 'Tools & Cloud', level: 88, desc: 'Linting rules, static code audits, formatting' },
+    { name: 'Performance & Web Vitals', category: 'Tools & Cloud', level: 90, desc: 'Lighthouse scoring 99+, load optimization' }
   ];
 
   const filteredSkills = activeCategory === 'All'
@@ -27,22 +27,18 @@ const Skills = () => {
     : skillsData.filter(s => s.category === activeCategory);
 
   return (
-    <section id="skills" className="section-padding skills-section">
+    <section id="skills" className="section-padding skills-section-clean">
       <div className="container">
-        <div className="section-header">
-          <div className="section-tag">// TECH STACK & SKILLS</div>
-          <h2 className="section-title">Technologies I Work With</h2>
-          <p className="section-subtitle">
-            A comprehensive overview of my technical toolset and engineering capabilities.
-          </p>
+        <div className="section-header-left">
+          <span className="mono-tag">—— TECHNICAL STACK // 004</span>
+          <h2 className="section-title">Core Technologies</h2>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="filter-tabs">
+        <div className="filter-bar">
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+              className={`filter-btn-clean ${activeCategory === cat ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat)}
             >
               {cat}
@@ -50,26 +46,16 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Skills Grid */}
-        <div className="skills-grid">
+        <div className="skills-grid-clean">
           {filteredSkills.map((skill, idx) => (
-            <div key={idx} className="skill-card glass-card">
-              <div className="skill-header">
-                <span className="skill-icon">{skill.icon}</span>
-                <div className="skill-info">
-                  <h3 className="skill-name">{skill.name}</h3>
-                  <span className="skill-category-badge">{skill.category}</span>
-                </div>
-                <span className="skill-percent">{skill.level}%</span>
+            <div key={idx} className="skill-card-clean">
+              <div className="skill-meta-row">
+                <span className="skill-title-clean">{skill.name}</span>
+                <span className="skill-score">{skill.level}%</span>
               </div>
-              
-              <p className="skill-desc">{skill.desc}</p>
-
-              <div className="progress-bar-bg">
-                <div 
-                  className="progress-bar-fill"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
+              <p className="skill-desc-clean">{skill.desc}</p>
+              <div className="skill-line-bg">
+                <div className="skill-line-bar" style={{ width: `${skill.level}%` }}></div>
               </div>
             </div>
           ))}

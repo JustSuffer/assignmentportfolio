@@ -13,47 +13,46 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'About', href: '#about' },
+    { name: 'Stack', href: '#skills' },
     { name: 'AI Lab', href: '#playground' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <a href="#hero" className="nav-logo">
-          <span className="logo-badge">I</span>
-          <span className="logo-text">İzzet Can<span className="logo-accent">.Sorna</span></span>
+        {/* Left Monospace Logo */}
+        <a href="#hero" className="nav-logo-mono">
+          İZZET_CAN_SORNA
         </a>
 
-        {/* Desktop Links */}
+        {/* Center Nav Links */}
         <nav className="nav-menu">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link">
+            <a key={link.name} href={link.href} className="nav-link-minimal">
               {link.name}
             </a>
           ))}
         </nav>
 
+        {/* Right Action Button */}
         <div className="nav-actions">
-          <a href="#contact" className="btn btn-primary nav-cta">
-            <span>Get In Touch</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+          <a href="#contact" className="btn-contact-light">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
+            <span>Contact</span>
           </a>
 
-          {/* Mobile Hamburger */}
           <button 
             className="mobile-toggle"
             aria-label="Toggle navigation menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -79,10 +78,10 @@ const Navbar = () => {
           ))}
           <a
             href="#contact"
-            className="btn btn-primary"
+            className="btn-contact-light"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Get In Touch
+            Contact
           </a>
         </div>
       )}

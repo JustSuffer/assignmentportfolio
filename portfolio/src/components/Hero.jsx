@@ -3,89 +3,118 @@ import React from 'react';
 const Hero = () => {
   return (
     <section id="hero" className="hero-section">
-      <div className="container hero-container">
-        <div className="hero-content">
-          <div className="status-pill">
-            <span className="status-dot"></span>
-            <span>AVAILABLE FOR AI & FULL-STACK PROJECTS</span>
+      <div className="container">
+        <div className="hero-grid">
+          {/* Left Hero Content */}
+          <div className="hero-text-content">
+            <div className="eyebrow-line">
+              <span className="line-prefix">——</span>
+              <span className="mono-tag">AI & FULL-STACK SYSTEM ARCHITECTURE // 001</span>
+            </div>
+
+            <h1 className="hero-headline">
+              AI Engineer & <br />
+              Full-Stack Developer
+            </h1>
+
+            <p className="hero-lead">
+              Building autonomous AI pipelines, intelligent LLM solutions, and high-performance web applications with clean, performant interfaces. Translating abstract data into seamless user experiences.
+            </p>
+
+            <div className="hero-action-row">
+              <a href="#projects" className="btn-primary-blue">
+                <span>View Projects</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+              <a href="#playground" className="btn-outline-dark">
+                <span>Interactive AI Lab</span>
+              </a>
+            </div>
           </div>
 
-          <h1 className="hero-title">
-            Crafting Intelligent <br />
-            <span className="gradient-text">Web Applications</span> & <br />
-            AI Solutions
-          </h1>
+          {/* Right Hero Visual — Technical Telemetry Terminal Card (NO PERSON PHOTOS) */}
+          <div className="hero-schematic-wrapper">
+            <div className="telemetry-card">
+              <div className="telemetry-header">
+                <div className="telemetry-meta">
+                  <span>SYS_MONITOR: ACTIVE</span>
+                  <span>LATENCY: 12ms</span>
+                </div>
+                <div className="telemetry-meta">
+                  <span>MODEL: GEMINI_FLASH</span>
+                </div>
+              </div>
 
-          <p className="hero-description">
-            Hi, I’m <strong>İzzet Can Sorna</strong> — an AI Engineer & Full-Stack Developer specializing in high-performance React architectures, intelligent LLM integration, and modern digital experiences.
-          </p>
+              {/* Wireframe Diagram / Code Monitor */}
+              <div className="telemetry-screen">
+                <div className="wireframe-grid">
+                  <div className="node-box node-input">
+                    <span className="node-title">INPUT_DATA</span>
+                    <span className="node-status">Active</span>
+                  </div>
+                  <div className="node-connector"></div>
+                  <div className="node-box node-core">
+                    <span className="node-title">AI_LLM_PIPELINE</span>
+                    <span className="node-status text-blue">Processing</span>
+                  </div>
+                  <div className="node-connector"></div>
+                  <div className="node-box node-output">
+                    <span className="node-title">REACT_UI_RENDER</span>
+                    <span className="node-status text-emerald">Deployed</span>
+                  </div>
+                </div>
 
-          <div className="hero-buttons">
-            <a href="#projects" className="btn btn-primary">
-              <span>View Projects</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-            <a href="#playground" className="btn btn-secondary">
-              <span>Try Live AI Demo</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
-            </a>
-          </div>
-
-          <div className="hero-stats">
-            <div className="stat-card">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Client Satisfaction</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">⚡ Fast</span>
-              <span className="stat-label">Lighthouse 99+ Score</span>
+                {/* Telemetry Stat Overlay */}
+                <div className="stat-overlay-box">
+                  <span className="stat-value">98.4%</span>
+                  <span className="stat-label">SYSTEM ACCURACY & SPEED</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="avatar-card glass-card">
-            <div className="avatar-wrapper">
-              <img src="/assets/avatar.jpg" alt="İzzet Can Sorna" className="avatar-img" />
-              <div className="avatar-glow"></div>
+        {/* 3-Column Technical Core Skills (Exact match to Image 2 bottom grid) */}
+        <div className="hero-pillars-grid">
+          <div className="pillar-item">
+            <div className="pillar-header">
+              <span className="pillar-icon">🖥️</span>
+              <h3 className="pillar-title">FULL-STACK ARCHITECTURE</h3>
             </div>
-
-            <div className="floating-badge badge-top-right">
-              <span className="badge-icon">🧠</span>
-              <span className="badge-text">AI Integration</span>
+            <p className="pillar-desc">
+              Modular React 19 frontends, REST APIs, and optimized Vite build systems. Clean, scalable, and responsive codebases.
+            </p>
+            <div className="pillar-line-wrapper">
+              <div className="pillar-line-fill fill-85"></div>
             </div>
+          </div>
 
-            <div className="floating-badge badge-bottom-left">
-              <span className="badge-icon">⚛️</span>
-              <span className="badge-text">React 19 & Vite</span>
+          <div className="pillar-item">
+            <div className="pillar-header">
+              <span className="pillar-icon">🧠</span>
+              <h3 className="pillar-title">APPLIED AI & LLM AGENTS</h3>
             </div>
+            <p className="pillar-desc">
+              Implementation of autonomous agent workflows, prompt engineering, and intelligent site analytics engines like FlyRank AI.
+            </p>
+            <div className="pillar-line-wrapper">
+              <div className="pillar-line-fill fill-95"></div>
+            </div>
+          </div>
 
-            <div className="code-snippet-box">
-              <div className="code-header">
-                <span className="code-dot dot-red"></span>
-                <span className="code-dot dot-yellow"></span>
-                <span className="code-dot dot-green"></span>
-                <span className="code-title">engineer.ts</span>
-              </div>
-              <pre className="code-content">
-                <code>
-                  <span className="code-keyword">const</span> developer = &#123;<br />
-                  &nbsp;&nbsp;name: <span className="code-string">'İzzet Can Sorna'</span>,<br />
-                  &nbsp;&nbsp;role: <span className="code-string">'AI & Full-Stack Developer'</span>,<br />
-                  &nbsp;&nbsp;focus: [<span className="code-string">'LLMs'</span>, <span className="code-string">'React'</span>, <span className="code-string">'Python'</span>],<br />
-                  &nbsp;&nbsp;status: <span className="code-string">'Deploy Ready 🚀'</span><br />
-                  &#125;;
-                </code>
-              </pre>
+          <div className="pillar-item">
+            <div className="pillar-header">
+              <span className="pillar-icon">⚡</span>
+              <h3 className="pillar-title">PERFORMANCE & DEPLOY</h3>
+            </div>
+            <p className="pillar-desc">
+              Low-latency web vitals, Lighthouse 99+ scoring, netlify.toml configurations, and production-ready CI/CD pipelines.
+            </p>
+            <div className="pillar-line-wrapper">
+              <div className="pillar-line-fill fill-90"></div>
             </div>
           </div>
         </div>
