@@ -10,6 +10,7 @@ export const translations = {
       skills: 'Skills',
       contact: 'Contact',
       resume: 'Resume',
+      viewCV: 'View CV',
     },
     hero: {
       badge: 'LATENT SPACE VECTOR ENVIRONMENT // OBSCURA SPEC V1.0',
@@ -21,12 +22,23 @@ export const translations = {
       lead: 'Translating high-dimensional neural representations, medical imaging research, and embedded hardware into production-grade AI systems with PyTorch, YOLOv11, and C++.',
       btnCV: 'Download Resume (PDF)',
       btnProjects: 'Explore Projects',
+      btnLab: 'Try Live AI Lab',
       metrics: [
         { val: '20+', lbl: 'AI & Engineering Projects' },
         { val: '4+', lbl: 'Industry Engineering Roles' },
         { val: '98%', lbl: 'Diagnostic Precision' },
         { val: '97.03%', lbl: 'Model Recall' }
       ],
+      // Fallbacks to guarantee compatibility with all legacy/new component paths
+      telemetry: {
+        active: 'YOLOV11_DIAGNOSTICS // ACTIVE',
+        dataset: '3.5K+ Samples',
+        precision: 'Precision: 98%',
+        clinicalMetrics: 'Sub-Millimeter',
+        frameRate: '36 FPS (3K+ Dataset)',
+        latency: '20ms Real-Time',
+        manuscript: 'Multimedia Tools & Apps',
+      },
       panel: {
         title: 'LATENT_VECTOR_TELEMETRY',
         status: 'SYSTEM_ACTIVE',
@@ -363,6 +375,7 @@ export const translations = {
       skills: 'Yetenekler',
       contact: 'İletişim',
       resume: 'Özgeçmiş',
+      viewCV: 'CV İncele',
     },
     hero: {
       badge: 'GİZLİ VEKTÖR ALANI // OBSCURA MASTER SPEC V1.0',
@@ -374,12 +387,22 @@ export const translations = {
       lead: 'PyTorch, YOLOv11 ve C++ kullanarak yüksek boyutlu sinir ağı temsil alanlarını, medikal görüntüleme araştırmalarını ve gömülü donanımları üretim seviyesi yapay zeka sistemlerine dönüştürme.',
       btnCV: 'Özgeçmiş İndir (PDF)',
       btnProjects: 'Projeleri İncele',
+      btnLab: 'Canlı AI Laboratuvarı',
       metrics: [
         { val: '20+', lbl: 'Yapay Zeka & Mühendislik Projesi' },
         { val: '4+', lbl: 'Endüstriyel Mühendislik Rolü' },
         { val: '%98', lbl: 'Teşhis Hassasiyeti' },
         { val: '%97.03', lbl: 'Model Duyarlılığı' }
       ],
+      telemetry: {
+        active: 'YOLOV11_TEŞHİS // AKTİF',
+        dataset: '3.5K+ Veri Kümesi',
+        precision: 'Hassasiyet: %98',
+        clinicalMetrics: 'Milimetre Altı Hassasiyet',
+        frameRate: '36 FPS (3K+ Veri Kümesi)',
+        latency: '20ms Gerçek Zamanlı',
+        manuscript: 'Multimedia Tools & Apps',
+      },
       panel: {
         title: 'LATENT_VECTOR_TELEMETRY',
         status: 'SİSTEM_AKTİF',
