@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" className="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -8,12 +8,36 @@
     <meta name="description" content="Portfolio of İzzet Can Sorna — Machine Learning Engineer specializing in Computer Vision, Medical Imaging, Autonomous Robotics (Metsuke), and YOLOv11 deep learning pipelines." />
     <meta name="keywords" content="İzzet Can Sorna, Machine Learning Engineer, Computer Vision, PyTorch, YOLOv11, Medical Imaging, Marmara University, Mechatronics, Autonomous Robotics, React" />
     
-    <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, JetBrains Mono -->
+    <!-- Google Fonts: SF Pro / Plus Jakarta Sans, Inter, JetBrains Mono, Cormorant Garamond -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              appleDark: '#000000',
+              appleCard: '#0a0a0c',
+              appleBorder: 'rgba(255,255,255,0.1)',
+              appleGold: '#d4af37',
+              appleGoldLight: '#f3e5ab',
+              appleBlue: '#2997ff',
+            }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
+  <body className="bg-black text-white antialiased font-sans selection:bg-amber-400 selection:text-black">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

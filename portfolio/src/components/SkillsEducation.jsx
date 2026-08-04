@@ -1,50 +1,35 @@
 import React from 'react';
 
 const SkillsEducation = ({ t }) => {
-  const skillCategories = [
-    {
-      title: 'ML & Computer Vision',
-      skills: ['PyTorch', 'YOLOv11', 'OpenCV', 'ResNet', 'MobileNet', 'TensorFlow', 'Keras', 'Scikit-learn', 'Pandas', 'NumPy']
-    },
-    {
-      title: 'Programming & Languages',
-      skills: ['Python', 'C++', 'JavaScript', 'HTML/CSS', 'SQL']
-    },
-    {
-      title: 'Cloud & DevOps Infrastructure',
-      skills: ['Oracle Cloud Infrastructure', 'Docker', 'Linux', 'GitHub Actions', 'CI/CD']
-    },
-    {
-      title: 'Web & API Engineering',
-      skills: ['FastAPI', 'REST APIs', 'React.js', 'Tailwind CSS', 'WebSockets']
-    },
-    {
-      title: 'Tools & Hardware Microcontrollers',
-      skills: ['Git', 'Google Colab', 'MATLAB', 'Arduino', 'ESP32-S3']
-    }
-  ];
-
   return (
-    <section id="skills" className="section-padding clair-skills-section">
-      <div className="container">
-        <div className="clair-section-header">
-          <span className="mono-tag text-gold">{t.skills.tag}</span>
-          <h2 className="section-title-serif">{t.skills.title}</h2>
-          <p className="section-subtitle">{t.skills.subtitle}</p>
+    <section id="skills" className="relative py-32 bg-black overflow-hidden">
+      <div className="max-w-[1320px] mx-auto px-6 md:px-12 w-full z-10">
+        
+        {/* Apple Section Header */}
+        <div className="flex flex-col items-start mb-16">
+          <span className="font-mono text-xs font-bold tracking-widest text-amber-400 uppercase mb-3">
+            {t.skills.tag}
+          </span>
+          <h2 className="font-sans text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
+            {t.skills.title}
+          </h2>
+          <p className="font-sans text-lg md:text-xl text-zinc-400 max-w-3xl mt-4 font-normal">
+            {t.skills.subtitle}
+          </p>
         </div>
 
-        <div className="skills-categories-grid">
-          {skillCategories.map((cat, idx) => (
-            <div key={idx} className="skill-cat-card clair-card">
-              <div className="cat-header">
-                <span className="cat-bullet text-gold">◆</span>
-                <h3 className="cat-title">{cat.title}</h3>
-              </div>
-
-              <div className="cat-tags-flex">
-                {cat.skills.map((skill, sIdx) => (
-                  <span key={sIdx} className="skill-badge-clair">
-                    {skill}
+        {/* Skills Spec Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {t.skills.categories.map((cat, idx) => (
+            <div key={idx} className="p-8 rounded-[36px] bg-zinc-950 border border-white/10 hover:border-amber-400/40 transition-all">
+              <h3 className="font-sans text-xl font-bold text-amber-400 mb-6 flex items-center gap-3">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                {cat.title}
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {cat.items.map((item, iIdx) => (
+                  <span key={iIdx} className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-zinc-300 hover:border-amber-400 hover:text-white transition-all">
+                    {item}
                   </span>
                 ))}
               </div>
@@ -52,17 +37,6 @@ const SkillsEducation = ({ t }) => {
           ))}
         </div>
 
-        {/* Additional Info Bar */}
-        <div className="additional-info-bar clair-card">
-          <div className="info-block">
-            <span className="mono-tag text-gold">{t.skills.languages}</span>
-            <span className="info-text-val">{t.skills.langVal}</span>
-          </div>
-          <div className="info-block">
-            <span className="mono-tag text-crimson">{t.skills.location}</span>
-            <span className="info-text-val">{t.skills.locVal}</span>
-          </div>
-        </div>
       </div>
     </section>
   );
