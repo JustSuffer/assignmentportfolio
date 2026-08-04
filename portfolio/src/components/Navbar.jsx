@@ -1,55 +1,58 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ onOpenCVModal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Projects', href: '#projects' },
     { name: 'About', href: '#about' },
-    { name: 'Stack', href: '#skills' },
-    { name: 'AI Lab', href: '#playground' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'AI Lab', href: '#diagnostics' },
+    { name: 'Skills & Ed', href: '#skills' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className={`navbar-header ${scrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        {/* Left Monospace Logo */}
-        <a href="#hero" className="nav-logo-mono">
-          İZZET_CAN_SORNA
+    <header className={`clair-navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-row">
+        <a href="#hero" className="nav-brand">
+          <span className="brand-init">İCS</span>
+          <div className="brand-text-group">
+            <span className="brand-name">İZZET CAN <span className="brand-gold">SORNA</span></span>
+            <span className="brand-sub">ML & Computer Vision Engineer</span>
+          </div>
         </a>
 
-        {/* Center Nav Links */}
+        {/* Desktop Links */}
         <nav className="nav-menu">
           {navLinks.map((link) => (
-            <a key={link.name} href={link.href} className="nav-link-minimal">
+            <a key={link.name} href={link.href} className="nav-item">
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Right Action Button */}
+        {/* Actions */}
         <div className="nav-actions">
-          <a href="#contact" className="btn-contact-light">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-              <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
+          <button className="btn-gold-outline" onClick={onOpenCVModal}>
+            <span>View CV</span>
+          </button>
+          <a href="#contact" className="btn-crimson">
             <span>Contact</span>
           </a>
 
           <button 
-            className="mobile-toggle"
-            aria-label="Toggle navigation menu"
+            className="mobile-hamburger"
+            aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,24 +68,26 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-drawer">
+        <div className="mobile-menu-drawer">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="mobile-link"
+              className="mobile-nav-item"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="btn-contact-light"
-            onClick={() => setMobileMenuOpen(false)}
+          <button 
+            className="btn-gold-outline full-width"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenCVModal();
+            }}
           >
-            Contact
-          </a>
+            View Full CV
+          </button>
         </div>
       )}
     </header>
