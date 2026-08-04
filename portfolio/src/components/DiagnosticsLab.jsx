@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DiagnosticsLab = () => {
+const DiagnosticsLab = ({ t }) => {
   const [activeTab, setActiveTab] = useState('eyelid'); // 'eyelid' | 'brain' | 'robot'
   const [simulating, setSimulating] = useState(false);
   const [simulationResult, setSimulationResult] = useState(null);
@@ -23,7 +23,7 @@ const DiagnosticsLab = () => {
           type: 'Eyelid Malposition Diagnosis',
           model: 'YOLOv11 PyTorch Clinical Weights',
           mAP50: '98.00%',
-          mrd2Value: '4.85 mm (Calculated Sub-Millimeter)',
+          mrd2Value: '4.85 mm (Sub-Millimeter Precision)',
           inferenceTime: '20 ms / frame',
           datasetSize: '3,000+ Clinical Samples',
           recommendation: 'Normal lower eyelid position. Margin Reflex Distance 2 within clinical threshold.'
@@ -56,11 +56,9 @@ const DiagnosticsLab = () => {
     <section id="diagnostics" className="section-padding clair-lab-section">
       <div className="container">
         <div className="clair-section-header">
-          <span className="mono-tag text-crimson">// INTERACTIVE COMPUTER VISION & ROBOTICS LAB</span>
-          <h2 className="section-title-serif">Live Diagnostic & Kinematics Simulator</h2>
-          <p className="section-subtitle">
-            Test İzzet Can Sorna's YOLOv11 medical vision models and Metsuke quadruped robot telemetry in real-time.
-          </p>
+          <span className="mono-tag text-crimson">{t.diagnostics.tag}</span>
+          <h2 className="section-title-serif">{t.diagnostics.title}</h2>
+          <p className="section-subtitle">{t.diagnostics.subtitle}</p>
         </div>
 
         {/* Lab Navigation Tabs */}
@@ -69,19 +67,19 @@ const DiagnosticsLab = () => {
             className={`clair-filter-btn ${activeTab === 'eyelid' ? 'active' : ''}`}
             onClick={() => { setActiveTab('eyelid'); setSimulationResult(null); }}
           >
-            👁️ Eyelid Malposition AI (YOLOv11)
+            {t.diagnostics.tabEyelid}
           </button>
           <button
             className={`clair-filter-btn ${activeTab === 'brain' ? 'active' : ''}`}
             onClick={() => { setActiveTab('brain'); setSimulationResult(null); }}
           >
-            🧠 Brain Medical RMI (mAP 97.04%)
+            {t.diagnostics.tabBrain}
           </button>
           <button
             className={`clair-filter-btn ${activeTab === 'robot' ? 'active' : ''}`}
             onClick={() => { setActiveTab('robot'); setSimulationResult(null); }}
           >
-            🤖 Metsuke Robot Telemetry (15ms)
+            {t.diagnostics.tabRobot}
           </button>
         </div>
 
@@ -90,11 +88,9 @@ const DiagnosticsLab = () => {
           {(activeTab === 'eyelid' || activeTab === 'brain') && (
             <div className="vision-sim-grid">
               <div className="sim-control-side">
-                <h4 className="mono-heading text-gold">MODEL INFERENCE CONTROLS</h4>
+                <h4 className="mono-heading text-gold">{t.diagnostics.ctrlHeader}</h4>
                 <p className="sim-intro-text">
-                  {activeTab === 'eyelid'
-                    ? 'Quantifies lower eyelid position in real-time using YOLOv11 and OpenCV, calculating surgical metrics like MRD2.'
-                    : 'AI-assisted brain medical imaging model trained on RMI datasets achieving 97.04% mAP score.'}
+                  {activeTab === 'eyelid' ? t.diagnostics.eyelidIntro : t.diagnostics.brainIntro}
                 </p>
 
                 <div className="sim-button-group">
@@ -103,7 +99,9 @@ const DiagnosticsLab = () => {
                     onClick={() => handleRunMedicalInference(activeTab)}
                     disabled={simulating}
                   >
-                    {simulating ? '⚡ Running YOLOv11 Inference...' : `🚀 Run ${activeTab === 'eyelid' ? 'Eyelid Diagnostic' : 'Brain RMI'} Inference`}
+                    {simulating 
+                      ? t.diagnostics.running 
+                      : (activeTab === 'eyelid' ? t.diagnostics.btnRunEyelid : t.diagnostics.btnRunBrain)}
                   </button>
                 </div>
 
@@ -124,19 +122,19 @@ const DiagnosticsLab = () => {
               </div>
 
               <div className="sim-output-side">
-                <h4 className="mono-heading text-crimson">TELEMETRY & INFERENCE RESULTS</h4>
+                <h4 className="mono-heading text-crimson">{t.diagnostics.telemetryHeader}</h4>
 
                 {!simulationResult && !simulating && (
                   <div className="sim-placeholder-box">
-                    <span className="mono-tag">STATUS: WAITING_FOR_TRIGGER</span>
-                    <p>Click "Run Inference" on the left to execute model simulation.</p>
+                    <span className="mono-tag">{t.diagnostics.waiting}</span>
+                    <p>{t.diagnostics.waitingMsg}</p>
                   </div>
                 )}
 
                 {simulating && (
                   <div className="sim-placeholder-box">
                     <div className="clair-spinner"></div>
-                    <span className="mono-tag text-gold">PROCESSING YOLOV11 PIPELINE...</span>
+                    <span className="mono-tag text-gold">{t.diagnostics.processing}</span>
                   </div>
                 )}
 
@@ -178,16 +176,14 @@ const DiagnosticsLab = () => {
             <div className="robot-sim-grid">
               <div className="robot-control-panel">
                 <h4 className="mono-heading text-gold">METSUKE ROBOT TELEMETRY (ESP32-S3)</h4>
-                <p className="sim-intro-text">
-                  Real-time quadupped robot assistant running C/C++ embedded kinematics and WebSockets at 15ms latency.
-                </p>
+                <p className="sim-intro-text">{t.diagnostics.robotIntro}</p>
 
                 <div className="robot-actions-group">
                   <button 
                     className={`btn-gold-solid full-width ${robotState.obstacleDetected ? 'btn-crimson-solid' : ''}`}
                     onClick={toggleObstacleAvoidance}
                   >
-                    {robotState.obstacleDetected ? '⚠️ Clear Obstacle' : '⚡ Simulate Obstacle Detection'}
+                    {robotState.obstacleDetected ? t.diagnostics.btnClearObstacle : t.diagnostics.btnObstacleSim}
                   </button>
                 </div>
 

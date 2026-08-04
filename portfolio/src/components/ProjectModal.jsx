@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = ({ project, t, onClose }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose();
@@ -55,10 +55,10 @@ const ProjectModal = ({ project, onClose }) => {
 
         <div className="modal-actions-bar">
           <a href="#contact" className="btn-gold-solid" onClick={onClose}>
-            <span>Discuss Engineering & Deployment</span>
+            <span>{t.projects.btnDiscuss}</span>
           </a>
           <button className="btn-crimson-outline" onClick={onClose}>
-            <span>Close Project</span>
+            <span>{t.projects.btnClose}</span>
           </button>
         </div>
       </div>

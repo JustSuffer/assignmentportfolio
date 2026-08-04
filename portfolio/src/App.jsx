@@ -10,32 +10,41 @@ import SkillsEducation from './components/SkillsEducation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CVModal from './components/CVModal';
+import { translations } from './utils/translations';
 
 function App() {
+  const [lang, setLang] = useState('EN'); // Default language is English
   const [showCVModal, setShowCVModal] = useState(false);
+
+  const t = translations[lang];
 
   return (
     <div className="portfolio-app-clair">
       {/* 3D Chiaroscuro Interactive Background Canvas */}
       <ChiaroscuroCanvas />
 
-      <Navbar onOpenCVModal={() => setShowCVModal(true)} />
+      <Navbar 
+        lang={lang} 
+        setLang={setLang} 
+        t={t} 
+        onOpenCVModal={() => setShowCVModal(true)} 
+      />
 
       <main style={{ position: 'relative', zIndex: 1 }}>
-        <Hero onOpenCVModal={() => setShowCVModal(true)} />
-        <About />
-        <Experience />
-        <Projects />
-        <DiagnosticsLab />
-        <SkillsEducation />
-        <Contact onOpenCVModal={() => setShowCVModal(true)} />
+        <Hero t={t} onOpenCVModal={() => setShowCVModal(true)} />
+        <About t={t} />
+        <Experience t={t} />
+        <Projects t={t} />
+        <DiagnosticsLab t={t} />
+        <SkillsEducation t={t} />
+        <Contact t={t} onOpenCVModal={() => setShowCVModal(true)} />
       </main>
 
-      <Footer />
+      <Footer t={t} />
 
       {/* CV Printable Modal */}
       {showCVModal && (
-        <CVModal onClose={() => setShowCVModal(false)} />
+        <CVModal lang={lang} onClose={() => setShowCVModal(false)} />
       )}
     </div>
   );
