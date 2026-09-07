@@ -184,11 +184,12 @@ export const translations = {
       items: [
         {
           id: 1,
-          title: 'Computational Medical Imaging Quantification Research',
-          subtitle: 'AI-Assisted Brain RMI Imaging & YOLOv11 Model Quantification',
+          title: 'Real-Time Multi-Class Brain Tumor Localization in MRI Using YOLOv11 for Early Intervention',
+          subtitle: 'AI-ASSISTED BRAIN RMI IMAGING & YOLOV11 MODEL QUANTIFICATION',
           category: 'Medical AI',
           isFeatured: true,
           date: 'Jul 2026',
+          image: '/images/brain_mri_paper.png',
           tags: ['YOLOv11', 'PyTorch', 'Medical Vision', 'Brain RMI', 'Research Paper'],
           shortDesc: 'Manuscript submitted to Multimedia Tools and Applications (Under Review). Achieved 97.04% mAP score on brain RMI datasets.',
           highlights: [
@@ -226,10 +227,11 @@ export const translations = {
         {
           id: 3,
           title: 'Artificial Intelligence in Droopy Lower Eyelid Malposition',
-          subtitle: 'Real-Time Diagnostic Tool Calculating MRD2 Surgical Metrics',
+          subtitle: 'REAL-TIME DIAGNOSTIC TOOL CALCULATING MRD2 SURGICAL METRICS',
           category: 'Medical AI',
           isFeatured: true,
           date: 'Jan 2026',
+          image: '/images/eyelid_report.png',
           tags: ['YOLOv11', 'OpenCV', 'Python', 'MRD2 Metric', 'Clinical Vision'],
           shortDesc: 'End-to-end CV diagnostic tool quantifying lower eyelid malposition in real-time by calculating surgical metrics like MRD2.',
           highlights: [
@@ -678,11 +680,12 @@ export const translations = {
       items: [
         {
           id: 1,
-          title: 'Hesaplamalı Medikal Görüntüleme Nicelleştirme Araştırması',
-          subtitle: 'AI Destekli Beyin RMI Görüntüleme ve YOLOv11 Model Nicelleştirmesi',
+          title: 'Real-Time Multi-Class Brain Tumor Localization in MRI Using YOLOv11 for Early Intervention',
+          subtitle: 'AI-ASSISTED BRAIN RMI IMAGING & YOLOV11 MODEL QUANTIFICATION',
           category: 'Medikal AI',
           isFeatured: true,
           date: 'Tem 2026',
+          image: '/images/brain_mri_paper.png',
           tags: ['YOLOv11', 'PyTorch', 'Medikal Görü', 'Beyin RMI', 'Araştırma Makalesi'],
           shortDesc: 'Multimedia Tools and Applications dergisine sunulan makale (İncelemede). Beyin RMI veri kümesinde %97.04 mAP skoru.',
           highlights: [
@@ -719,16 +722,17 @@ export const translations = {
         },
         {
           id: 3,
-          title: 'Düşük Alt Göz Kapağı Bozukluğunda Yapay Zeka Teşhisi',
-          subtitle: 'MRD2 Cerrahi Metriklerini Hesaplayan Gerçek Zamanlı Teşhis Aracı',
+          title: 'Artificial Intelligence in Droopy Lower Eyelid Malposition',
+          subtitle: 'REAL-TIME DIAGNOSTIC TOOL CALCULATING MRD2 SURGICAL METRICS',
           category: 'Medikal AI',
           isFeatured: true,
           date: 'Oca 2026',
+          image: '/images/eyelid_report.png',
           tags: ['YOLOv11', 'OpenCV', 'Python', 'MRD2 Metriği', 'Klinik Görü'],
           shortDesc: 'YOLOv11 ve OpenCV ile MRD2 gibi cerrahi metrikleri dinamik hesaplayan uçtan uca teşhis aracı.',
           highlights: [
             'Alt göz kapağı konumunu nicelleyen teşhis aracı geliştirdi.',
-            '3K+ klinik veri kümesinde %98 hassasiyet ve milimetre altı doğruk elde etti.',
+            '3K+ klinik veri kümesinde %98 hassasiyet ve milimetre altı doğruluk elde etti.',
             'Çıkarım süresini kare başına 20ms’ye düşürerek klinikte kullanıma uygun hale getirdi.'
           ],
           metrics: [
