@@ -133,12 +133,15 @@ const Navbar = ({ lang, setLang, t, onOpenCVModal }) => {
             </button>
           </div>
 
-          <button
-            onClick={onOpenCVModal}
+          <a
+            href="/CV/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Izzet_Can_Sorna_CV.pdf"
             className="hidden md:inline-flex items-center justify-center px-4 py-2 rounded-full bg-white text-black font-sans text-xs font-extrabold hover:bg-amber-400 transition-all hover:scale-105"
           >
             {t.nav.resume}
-          </button>
+          </a>
 
           <button
             className="lg:hidden text-white p-2"
@@ -168,15 +171,16 @@ const Navbar = ({ lang, setLang, t, onOpenCVModal }) => {
               {link.name}
             </a>
           ))}
-          <button
-            className="w-full py-3 rounded-full bg-amber-400 text-black font-extrabold text-sm"
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenCVModal();
-            }}
+          <a
+            href="/CV/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Izzet_Can_Sorna_CV.pdf"
+            className="w-full py-3 rounded-full bg-amber-400 text-black font-extrabold text-sm text-center block"
+            onClick={() => setMobileMenuOpen(false)}
           >
             {t.nav.resume}
-          </button>
+          </a>
         </div>
       )}
     </header>

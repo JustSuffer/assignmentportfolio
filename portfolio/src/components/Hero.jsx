@@ -6,8 +6,8 @@ const Hero = ({ t, onOpenCVModal }) => {
     : [
         { val: '20+', lbl: 'AI & Engineering Projects' },
         { val: '4+', lbl: 'Industry Engineering Roles' },
-        { val: '98%', lbl: 'Diagnostic Precision' },
-        { val: '97.03%', lbl: 'Model Recall' }
+        { val: '17', lbl: 'Professional Certifications' },
+        { val: '98%', lbl: 'Diagnostic Precision' }
       ];
 
   return (
@@ -40,11 +40,20 @@ const Hero = ({ t, onOpenCVModal }) => {
 
         {/* Apple Action Buttons */}
         <div className="flex flex-wrap items-center gap-4 mb-16">
+          <a 
+            href="/CV/CV.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            download="Izzet_Can_Sorna_CV.pdf"
+            className="px-8 py-4 rounded-full bg-white text-black font-extrabold text-sm uppercase tracking-wider hover:bg-amber-400 hover:scale-105 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.2)] inline-flex items-center gap-2"
+          >
+            📄 {t?.hero?.btnCV || 'DOWNLOAD RESUME (PDF)'}
+          </a>
           <button 
             onClick={onOpenCVModal}
-            className="px-8 py-4 rounded-full bg-white text-black font-extrabold text-sm uppercase tracking-wider hover:bg-amber-400 hover:scale-105 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.2)]"
+            className="px-6 py-4 rounded-full bg-white/10 backdrop-blur-2xl border border-white/20 text-amber-300 font-mono text-xs font-bold uppercase tracking-wider hover:bg-white/20 transition-all"
           >
-            📄 {t?.hero?.btnCV || 'DOWNLOAD RESUME'}
+            🔍 PREVIEW CV
           </button>
           <a 
             href="#projects" 
