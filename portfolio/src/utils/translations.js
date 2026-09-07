@@ -4,9 +4,8 @@ export const translations = {
       home: 'Home',
       about: 'About',
       experience: 'Experience',
-      research: 'Research',
       projects: 'Projects',
-      aiLab: 'AI Models',
+      certificates: 'Certificates',
       skills: 'Skills',
       contact: 'Contact',
       resume: 'Resume',
@@ -22,32 +21,13 @@ export const translations = {
       lead: 'Translating high-dimensional neural representations, medical imaging research, and embedded hardware into production-grade AI systems with PyTorch, YOLOv11, and C++.',
       btnCV: 'Download Resume (PDF)',
       btnProjects: 'Explore Projects',
-      btnLab: 'Try Live AI Lab',
+      btnLab: 'View Certificates',
       metrics: [
         { val: '20+', lbl: 'AI & Engineering Projects' },
         { val: '4+', lbl: 'Industry Engineering Roles' },
-        { val: '98%', lbl: 'Diagnostic Precision' },
-        { val: '97.03%', lbl: 'Model Recall' }
-      ],
-      // Fallbacks to guarantee compatibility with all legacy/new component paths
-      telemetry: {
-        active: 'YOLOV11_DIAGNOSTICS // ACTIVE',
-        dataset: '3.5K+ Samples',
-        precision: 'Precision: 98%',
-        clinicalMetrics: 'Sub-Millimeter',
-        frameRate: '36 FPS (3K+ Dataset)',
-        latency: '20ms Real-Time',
-        manuscript: 'Multimedia Tools & Apps',
-      },
-      panel: {
-        title: 'LATENT_VECTOR_TELEMETRY',
-        status: 'SYSTEM_ACTIVE',
-        mcu: 'ESP32-S3 / PyTorch 2.x',
-        fps: '60 FPS WebGL Engine',
-        manuscript: 'Multimedia Tools & Apps',
-        dataset: '3.5K+ Clinical Samples',
-        latency: '15ms Latency'
-      }
+        { val: '17', lbl: 'Professional Certifications' },
+        { val: '98%', lbl: 'Diagnostic Precision' }
+      ]
     },
     about: {
       tag: '// BIOGRAPHY & RESEARCH PHILOSOPHY',
@@ -200,7 +180,7 @@ export const translations = {
       btnBreakdown: 'Technical Breakdown →',
       btnDiscuss: 'Discuss Architecture',
       btnClose: 'Close Project',
-      categories: ['All', 'Featured', 'Medical AI', 'Robotics', 'Computer Vision'],
+      categories: ['All', 'Medical AI', 'Robotics', 'Computer Vision', 'Research & AI', 'Web Applications'],
       items: [
         {
           id: 1,
@@ -229,6 +209,7 @@ export const translations = {
           category: 'Robotics',
           isFeatured: true,
           date: 'Mar 2026',
+          image: '/images/metsuke.jpg',
           tags: ['ESP32-S3', 'C/C++', 'Kinematics', 'WebSockets', 'Obstacle Avoidance'],
           shortDesc: 'Autonomous quadruped robot programmed on ESP32-S3 microcontroller with 15ms sensor response time.',
           highlights: [
@@ -264,11 +245,12 @@ export const translations = {
         },
         {
           id: 4,
-          title: 'Aura XI — Real-Time Motion Tracking Turret',
-          subtitle: 'Computer Vision Servo Control & Target Tracking at 36 FPS',
+          title: 'Real-Time Motion Tracking Turret',
+          subtitle: 'COMPUTER VISION SERVO CONTROL & TARGET TRACKING AT 36 FPS',
           category: 'Computer Vision',
           isFeatured: true,
           date: 'Aug 2025',
+          image: '/images/motion_turret.png',
           tags: ['Keras', 'OpenCV', 'Python', 'Object Tracking', 'Servo Hardware'],
           shortDesc: 'Real-time motion tracking turret system running custom hardware and object tracking algorithms at 36 FPS.',
           highlights: [
@@ -281,29 +263,176 @@ export const translations = {
             { val: 'Keras/OpenCV', lbl: 'CV Stack' },
             { val: 'Real-Time', lbl: 'Hardware Control' }
           ]
+        },
+        {
+          id: 5,
+          title: 'ALMP — Adaptive Latent Manifold Projection',
+          subtitle: 'EXPLAINABLE AI & DEEP LEARNING ARCHITECTURAL TRANSPARENCY',
+          category: 'Research & AI',
+          isFeatured: true,
+          date: 'Jul 2026',
+          image: '/images/almp_visualization.png',
+          tags: ['Deep Learning', 'PyTorch', 'Latent Space', 'Explainable AI', 'CNNs', 'Medical Vision'],
+          shortDesc: 'As Deep Learning (DL) models and Convolutional Neural Networks (CNNs) scale in complexity, their internal decision-making processes have become increasingly opaque. This "black box" phenomenon poses a critical bottleneck, particularly in high-stakes domains such as medical image analysis (e.g., Alzheimer\'s classification, brain tumor localization), where architectural transparency is as vital as predictive accuracy.',
+          highlights: [
+            'Developed Adaptive Latent Manifold Projection (ALMP) to map CNN internal feature representations.',
+            'Created high-dimensional latent space visualizer for transparent decision auditing in medical AI.',
+            'Eliminated black-box opacity in deep neural network decision boundaries.'
+          ],
+          metrics: [
+            { val: 'Explainable AI', lbl: 'Core Focus' },
+            { val: 'PyTorch', lbl: 'Framework' },
+            { val: 'Manifold', lbl: 'Topology' }
+          ]
+        },
+        {
+          id: 6,
+          title: 'Aura XI',
+          subtitle: 'NEXT-GEN FOOTBALL MANAGER EXPERIENCE',
+          category: 'Web Applications',
+          isFeatured: true,
+          date: '2026',
+          image: '/images/aura_xi_game.png',
+          tags: ['React.js', 'Web Applications', 'Game Engine', 'Full Stack', 'Tailwind CSS'],
+          shortDesc: 'Welcome to the Next-Gen Football Manager Experience! Tired of classic, tedious, and sluggish football management games? Aura XI offers a fast-paced, competitive experience packed with "Aura." Build your dream team, open rare player packs, define your strategy, and dominate the pitch!',
+          highlights: [
+            'Designed and built a fast-paced, competitive next-gen football management web application.',
+            'Integrated dynamic player card pack drafting, tactical formation builders, and match simulation engines.',
+            'Engineered responsive high-performance UI/UX with React.js and custom state management.'
+          ],
+          metrics: [
+            { val: '1248+', lbl: 'Real Players Pool' },
+            { val: 'Next-Gen', lbl: 'Game Engine' },
+            { val: 'React.js', lbl: 'Tech Stack' }
+          ]
         }
       ]
     },
-    diagnostics: {
-      tag: '// LIVE RESEARCH DEMONSTRATIONS',
-      title: 'AI Models & Telemetry Laboratory',
-      subtitle: 'Test YOLOv11 medical computer vision models and Metsuke quadruped telemetry live in browser.',
-      tabEyelid: '👁️ Lower Eyelid Diagnostic (YOLOv11)',
-      tabBrain: '🧠 Brain RMI Tumor Model (97.04% mAP)',
-      tabRobot: '🤖 Metsuke Robot Telemetry (15ms)',
-      ctrlHeader: 'INFERENCE PIPELINE CONTROLS',
-      eyelidIntro: 'Quantifies eyelid position in real-time using YOLOv11 and OpenCV, calculating surgical metrics like MRD2.',
-      brainIntro: 'AI-assisted brain medical imaging model trained on RMI datasets achieving 97.04% mAP score.',
-      robotIntro: 'Real-time quadruped robot assistant running C/C++ embedded kinematics and WebSockets at 15ms latency.',
-      btnRunEyelid: '🚀 Execute Eyelid Diagnostic Model',
-      btnRunBrain: '🚀 Execute Brain RMI Model',
-      running: '⚡ Running YOLOv11 PyTorch Inference...',
-      telemetryHeader: 'TELEMETRY & RESULTS',
-      waiting: 'STATUS: IDLE_WAITING_FOR_TRIGGER',
-      waitingMsg: 'Click "Execute Model" to run real-time inference simulation.',
-      processing: 'PROCESSING FEATURE MAPS...',
-      btnObstacleSim: '⚡ Simulate Obstacle Avoidance',
-      btnClearObstacle: '⚠️ Clear Obstacle',
+    certificates: {
+      tag: '// ACCREDITATION & CONTINUOUS LEARNING',
+      title: 'Certificates & Professional Licenses',
+      subtitle: 'Licenses and certifications I\'ve earned across AI, deep learning, cloud engineering, and modern web development — a record of continuous learning alongside my engineering work.',
+      items: [
+        {
+          title: 'Claude on Google Cloud',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'im57i93ibtqf',
+          skills: ['MCP', 'Retrieval-Augmented Generation (RAG)']
+        },
+        {
+          title: 'Model Context Protocol: Advanced Topics',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: '4yx5b2danvuq',
+          skills: ['Prompt Engineering', 'MCP']
+        },
+        {
+          title: 'Claude in Amazon Bedrock',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 't395no7bysq2',
+          skills: ['Amazon Web Services (AWS)', 'Amazon Bedrock']
+        },
+        {
+          title: 'Claude Code in Action',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'mrgedzg5ywig',
+          skills: ['Claude Code', 'MCP']
+        },
+        {
+          title: 'Introduction to Model Context Protocol',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: '8ka56nbgskgo',
+          skills: ['MCP', 'Retrieval-Augmented Generation (RAG)']
+        },
+        {
+          title: 'Teaching the AI Fluency Framework',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: '8ohvxf36a487',
+          skills: ['AI Fluency', 'Claude Code']
+        },
+        {
+          title: 'Introduction to Agent Skills',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'o4ih9wxvssux',
+          skills: ['AI Agents', 'Claude Agent SDK']
+        },
+        {
+          title: 'Claude 101',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'zqxhaho6kshz',
+          skills: ['MCP']
+        },
+        {
+          title: 'Building with the Claude API',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'xorjx4239em4',
+          skills: ['Web Services API', 'WebSocket']
+        },
+        {
+          title: 'AI Fluency Framework & Foundations',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'df9cx7nac4pu',
+          skills: ['Claude Code', 'Claude Agent SDK']
+        },
+        {
+          title: 'AI Fluency for Students',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: '4euq79cg9hv5',
+          skills: ['AI Fluency']
+        },
+        {
+          title: 'AI Fluency for Nonprofits',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'igygtqeuem3u',
+          skills: ['AI Fluency', 'Prompt Flow']
+        },
+        {
+          title: 'AI Fluency for Educators',
+          issuer: 'Anthropic',
+          date: 'Jul 2026',
+          credentialId: 'ocybbotgdsnv',
+          skills: ['AI Fluency']
+        },
+        {
+          title: 'A Deep Understanding of Deep Learning (with Python Intro)',
+          issuer: 'Udemy',
+          date: 'Nov 2025',
+          credentialId: 'UC-37ac1b67-9988-439f-975a-a424acdac4d2',
+          skills: ['PyTorch', 'Python']
+        },
+        {
+          title: 'The Ultimate React Course 2025: React, Next.js, Redux & More',
+          issuer: 'Udemy',
+          date: 'Oct 2025',
+          credentialId: 'UC-52fe3c90-6392-4bed-94d8-b0ce46b30b81',
+          skills: ['React.js', 'Redux']
+        },
+        {
+          title: 'Launch Your First Full-Stack App on AWS',
+          issuer: 'Amazon Web Services (AWS)',
+          date: 'Mar 2026',
+          credentialId: 'AWS-FS-2026',
+          skills: ['JavaScript', 'Python']
+        },
+        {
+          title: 'Build and Ship Cloud-Native Python Apps',
+          issuer: 'Amazon Web Services (AWS)',
+          date: 'Mar 2026',
+          credentialId: 'AWS-CN-2026',
+          skills: ['Docker', 'Python']
+        }
+      ]
     },
     skills: {
       tag: '// COMPETENCIES & TOOLSET',
@@ -369,9 +498,8 @@ export const translations = {
       home: 'Ana Sayfa',
       about: 'Hakkımda',
       experience: 'Deneyim',
-      research: 'Araştırma',
       projects: 'Projeler',
-      aiLab: 'AI Modelleri',
+      certificates: 'Sertifikalar',
       skills: 'Yetenekler',
       contact: 'İletişim',
       resume: 'Özgeçmiş',
@@ -387,31 +515,13 @@ export const translations = {
       lead: 'PyTorch, YOLOv11 ve C++ kullanarak yüksek boyutlu sinir ağı temsil alanlarını, medikal görüntüleme araştırmalarını ve gömülü donanımları üretim seviyesi yapay zeka sistemlerine dönüştürme.',
       btnCV: 'Özgeçmiş İndir (PDF)',
       btnProjects: 'Projeleri İncele',
-      btnLab: 'Canlı AI Laboratuvarı',
+      btnLab: 'Sertifikaları İncele',
       metrics: [
         { val: '20+', lbl: 'Yapay Zeka & Mühendislik Projesi' },
         { val: '4+', lbl: 'Endüstriyel Mühendislik Rolü' },
-        { val: '%98', lbl: 'Teşhis Hassasiyeti' },
-        { val: '%97.03', lbl: 'Model Duyarlılığı' }
-      ],
-      telemetry: {
-        active: 'YOLOV11_TEŞHİS // AKTİF',
-        dataset: '3.5K+ Veri Kümesi',
-        precision: 'Hassasiyet: %98',
-        clinicalMetrics: 'Milimetre Altı Hassasiyet',
-        frameRate: '36 FPS (3K+ Veri Kümesi)',
-        latency: '20ms Gerçek Zamanlı',
-        manuscript: 'Multimedia Tools & Apps',
-      },
-      panel: {
-        title: 'LATENT_VECTOR_TELEMETRY',
-        status: 'SİSTEM_AKTİF',
-        mcu: 'ESP32-S3 / PyTorch 2.x',
-        fps: '60 FPS WebGL Motoru',
-        manuscript: 'Multimedia Tools & Apps',
-        dataset: '3.5K+ Klinik Örnek',
-        latency: '15ms Gecikme'
-      }
+        { val: '17', lbl: 'Mesleki Sertifika' },
+        { val: '%98', lbl: 'Teşhis Hassasiyeti' }
+      ]
     },
     about: {
       tag: '// BİYOGRAFİ VE ARAŞTIRMA FELSEFESİ',
@@ -564,7 +674,7 @@ export const translations = {
       btnBreakdown: 'Teknik Detaylar →',
       btnDiscuss: 'Mimarini Tartışın',
       btnClose: 'Projeyi Kapat',
-      categories: ['Tümü', 'Öne Çıkanlar', 'Medikal AI', 'Robotik', 'Bilgisayarlı Görü'],
+      categories: ['Tümü', 'Medikal AI', 'Robotik', 'Bilgisayarlı Görü', 'Araştırma & AI', 'Web Uygulamaları'],
       items: [
         {
           id: 1,
@@ -593,6 +703,7 @@ export const translations = {
           category: 'Robotik',
           isFeatured: true,
           date: 'Mar 2026',
+          image: '/images/metsuke.jpg',
           tags: ['ESP32-S3', 'C/C++', 'Kinematik', 'WebSockets', 'Engel Kaçınma'],
           shortDesc: 'ESP32-S3 mikrodenetleyici üzerinde 15ms sensör yanıt süresine sahip otonom dört bacaklı robot.',
           highlights: [
@@ -617,7 +728,7 @@ export const translations = {
           shortDesc: 'YOLOv11 ve OpenCV ile MRD2 gibi cerrahi metrikleri dinamik hesaplayan uçtan uca teşhis aracı.',
           highlights: [
             'Alt göz kapağı konumunu nicelleyen teşhis aracı geliştirdi.',
-            '3K+ klinik veri kümesinde %98 hassasiyet ve milimetre altı doğruluk elde etti.',
+            '3K+ klinik veri kümesinde %98 hassasiyet ve milimetre altı doğruk elde etti.',
             'Çıkarım süresini kare başına 20ms’ye düşürerek klinikte kullanıma uygun hale getirdi.'
           ],
           metrics: [
@@ -628,11 +739,12 @@ export const translations = {
         },
         {
           id: 4,
-          title: 'Aura XI — Gerçek Zamanlı Hareket Takip Tareti',
-          subtitle: '36 FPS Hızında Bilgisayarlı Görü Servo Kontrolü ve Hedef Takibi',
+          title: 'Real-Time Motion Tracking Turret',
+          subtitle: 'COMPUTER VISION SERVO CONTROL & TARGET TRACKING AT 36 FPS',
           category: 'Bilgisayarlı Görü',
           isFeatured: true,
           date: 'Ağu 2025',
+          image: '/images/motion_turret.png',
           tags: ['Keras', 'OpenCV', 'Python', 'Nesne Takibi', 'Servo Donanım'],
           shortDesc: '36 FPS hızında özel donanım ve nesne takip algoritmaları çalıştıran hareket takip tareti.',
           highlights: [
@@ -645,29 +757,176 @@ export const translations = {
             { val: 'Keras/OpenCV', lbl: 'Görü Teknolojisi' },
             { val: 'Gerçek Zamanlı', lbl: 'Donanım Kontrolü' }
           ]
+        },
+        {
+          id: 5,
+          title: 'ALMP — Adaptive Latent Manifold Projection',
+          subtitle: 'EXPLAINABLE AI & DEEP LEARNING ARCHITECTURAL TRANSPARENCY',
+          category: 'Araştırma & AI',
+          isFeatured: true,
+          date: 'Tem 2026',
+          image: '/images/almp_visualization.png',
+          tags: ['Deep Learning', 'PyTorch', 'Latent Space', 'Explainable AI', 'CNNs', 'Medical Vision'],
+          shortDesc: 'Derin Öğrenme (DL) modelleri ve Evrişimli Sinir Ağları (CNN) karmaşıklığı arttıkça, iç karar verme süreçleri giderek daha kapalı hale gelmiştir. Bu "kara kutu" fenomeni, mimari şeffaflığın tahmin doğruluğu kadar hayati olduğu medikal görüntü analizi gibi alanlarda kritik bir engel oluşturmaktadır.',
+          highlights: [
+            'CNN iç karar yapılarını haritalamak için Adaptive Latent Manifold Projection (ALMP) geliştirildi.',
+            'Medikal AI karar süreçlerini incelemek için yüksek boyutlu gizli alan görselleştiricisi oluşturuldu.',
+            'Derin sinir ağlarındaki kara kutu kapalılığı ortadan kaldırıldı.'
+          ],
+          metrics: [
+            { val: 'Açıklanabilir AI', lbl: 'Temel Odak' },
+            { val: 'PyTorch', lbl: 'Framework' },
+            { val: 'Manifold', lbl: 'Topoloji' }
+          ]
+        },
+        {
+          id: 6,
+          title: 'Aura XI',
+          subtitle: 'NEXT-GEN FOOTBALL MANAGER EXPERIENCE',
+          category: 'Web Uygulamaları',
+          isFeatured: true,
+          date: '2026',
+          image: '/images/aura_xi_game.png',
+          tags: ['React.js', 'Web Applications', 'Game Engine', 'Full Stack', 'Tailwind CSS'],
+          shortDesc: 'Yeni Nesil Futbol Menajerliği Deneyimi! Klasik, sıkıcı ve yavaş futbol menajerlik oyunlarından sıkıldınız mı? Aura XI, yüksek tempolu, rekabetçi ve "Aura" dolu bir deneyim sunuyor. Hayalinizdeki takımı kurun, nadir oyuncu paketleri açın ve sahaya hükmedin!',
+          highlights: [
+            'Hızlı tempolu, rekabetçi yeni nesil futbol menajerlik web uygulaması tasarlandı.',
+            'Dinamik oyuncu kartı paket açılımı, taktik formasyon kurucu ve maç simülatörü entegre edildi.',
+            'React.js ile yüksek performanslı UI/UX geliştirildi.'
+          ],
+          metrics: [
+            { val: '1248+', lbl: 'Oyuncu Havuzu' },
+            { val: 'Yeni Nesil', lbl: 'Oyun Motoru' },
+            { val: 'React.js', lbl: 'Teknolojiler' }
+          ]
         }
       ]
     },
-    diagnostics: {
-      tag: '// CANLI ARAŞTIRMA DEMOLARI',
-      title: 'Yapay Zeka Modelleri & Telemetri Laboratuvarı',
-      subtitle: 'YOLOv11 medikal görü modellerini ve Metsuke robot telemetrisini canlı test edin.',
-      tabEyelid: '👁️ Alt Göz Kapağı Teşhisi (YOLOv11)',
-      tabBrain: '🧠 Beyin RMI Tümör Modeli (%97.04 mAP)',
-      tabRobot: '🤖 Metsuke Robot Telemetrisi (15ms)',
-      ctrlHeader: 'ÇIKARIM BORU HATTI KONTROLLERİ',
-      eyelidIntro: 'YOLOv11 ve OpenCV kullanarak göz kapağı konumunu gerçek zamanlı niceller ve MRD2 cerrahi metriklerini hesaplar.',
-      brainIntro: 'RMI veri kümesinde eğitilmiş ve %97.04 mAP skoruna ulaşmış beyin görüntüleme modeli.',
-      robotIntro: 'C/C++ gömülü kinematiği ve 15ms WebSockets ile çalışan gerçek zamanlı dört bacaklı robot asistanı.',
-      btnRunEyelid: '🚀 Göz Kapağı Modelini Çalıştır',
-      btnRunBrain: '🚀 Beyin RMI Modelini Çalıştır',
-      running: '⚡ YOLOv11 PyTorch Çıkarımı Yapılıyor...',
-      telemetryHeader: 'TELEMETRİ VE SONUÇLAR',
-      waiting: 'DURUM: BOŞTA_TETİKLEME_BEKLENİYOR',
-      waitingMsg: 'Gerçek zamanlı çıkarım simülasyonunu çalıştırmak için "Modeli Çalıştır" butonuna basın.',
-      processing: 'ÖZELLİK HARİTALARI İŞLENİYOR...',
-      btnObstacleSim: '⚡ Engel Kaçınmayı Simüle Et',
-      btnClearObstacle: '⚠️ Engeli Temizle',
+    certificates: {
+      tag: '// AKREDİTASYON VE SÜREKLİ ÖĞRENME',
+      title: 'Sertifikalar ve Mesleki Yetki Belgeleri',
+      subtitle: 'Yapay zeka, derin öğrenme, bulut mühendisliği ve modern web geliştirme alanlarında kazandığım sertifikalar — mühendislik çalışmalarımla birlikte sürekli öğrenme kaydım.',
+      items: [
+        {
+          title: 'Claude on Google Cloud',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'im57i93ibtqf',
+          skills: ['MCP', 'Retrieval-Augmented Generation (RAG)']
+        },
+        {
+          title: 'Model Context Protocol: Advanced Topics',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: '4yx5b2danvuq',
+          skills: ['Prompt Engineering', 'MCP']
+        },
+        {
+          title: 'Claude in Amazon Bedrock',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 't395no7bysq2',
+          skills: ['Amazon Web Services (AWS)', 'Amazon Bedrock']
+        },
+        {
+          title: 'Claude Code in Action',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'mrgedzg5ywig',
+          skills: ['Claude Code', 'MCP']
+        },
+        {
+          title: 'Introduction to Model Context Protocol',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: '8ka56nbgskgo',
+          skills: ['MCP', 'Retrieval-Augmented Generation (RAG)']
+        },
+        {
+          title: 'Teaching the AI Fluency Framework',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: '8ohvxf36a487',
+          skills: ['AI Fluency', 'Claude Code']
+        },
+        {
+          title: 'Introduction to Agent Skills',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'o4ih9wxvssux',
+          skills: ['AI Agents', 'Claude Agent SDK']
+        },
+        {
+          title: 'Claude 101',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'zqxhaho6kshz',
+          skills: ['MCP']
+        },
+        {
+          title: 'Building with the Claude API',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'xorjx4239em4',
+          skills: ['Web Services API', 'WebSocket']
+        },
+        {
+          title: 'AI Fluency Framework & Foundations',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'df9cx7nac4pu',
+          skills: ['Claude Code', 'Claude Agent SDK']
+        },
+        {
+          title: 'AI Fluency for Students',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: '4euq79cg9hv5',
+          skills: ['AI Fluency']
+        },
+        {
+          title: 'AI Fluency for Nonprofits',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'igygtqeuem3u',
+          skills: ['AI Fluency', 'Prompt Flow']
+        },
+        {
+          title: 'AI Fluency for Educators',
+          issuer: 'Anthropic',
+          date: 'Tem 2026',
+          credentialId: 'ocybbotgdsnv',
+          skills: ['AI Fluency']
+        },
+        {
+          title: 'A Deep Understanding of Deep Learning (with Python Intro)',
+          issuer: 'Udemy',
+          date: 'Kas 2025',
+          credentialId: 'UC-37ac1b67-9988-439f-975a-a424acdac4d2',
+          skills: ['PyTorch', 'Python']
+        },
+        {
+          title: 'The Ultimate React Course 2025: React, Next.js, Redux & More',
+          issuer: 'Udemy',
+          date: 'Ekim 2025',
+          credentialId: 'UC-52fe3c90-6392-4bed-94d8-b0ce46b30b81',
+          skills: ['React.js', 'Redux']
+        },
+        {
+          title: 'Launch Your First Full-Stack App on AWS',
+          issuer: 'Amazon Web Services (AWS)',
+          date: 'Mar 2026',
+          credentialId: 'AWS-FS-2026',
+          skills: ['JavaScript', 'Python']
+        },
+        {
+          title: 'Build and Ship Cloud-Native Python Apps',
+          issuer: 'Amazon Web Services (AWS)',
+          date: 'Mar 2026',
+          credentialId: 'AWS-CN-2026',
+          skills: ['Docker', 'Python']
+        }
+      ]
     },
     skills: {
       tag: '// YETKİNLİKLER VE ARAÇLAR',

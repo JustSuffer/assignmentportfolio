@@ -8,7 +8,7 @@ const Navbar = ({ lang, setLang, t, onOpenCVModal }) => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
-      const sections = ['hero', 'about', 'experience', 'projects', 'diagnostics', 'skills', 'contact'];
+      const sections = ['hero', 'about', 'experience', 'projects', 'certificates', 'skills', 'contact'];
       const scrollPos = window.scrollY + 200;
 
       for (const sec of sections) {
@@ -32,7 +32,7 @@ const Navbar = ({ lang, setLang, t, onOpenCVModal }) => {
     { name: t.nav.about, id: 'about' },
     { name: t.nav.experience, id: 'experience' },
     { name: t.nav.projects, id: 'projects' },
-    { name: t.nav.aiLab, id: 'diagnostics' },
+    { name: t.nav.certificates, id: 'certificates' },
     { name: t.nav.skills, id: 'skills' },
     { name: t.nav.contact, id: 'contact' },
   ];
@@ -64,7 +64,7 @@ const Navbar = ({ lang, setLang, t, onOpenCVModal }) => {
         </a>
 
         {/* Center Nav Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (

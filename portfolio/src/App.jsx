@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LatentSpaceCanvas from './components/3d/LatentSpaceCanvas';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -6,7 +6,7 @@ import MarqueeTicker from './components/MarqueeTicker';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import DiagnosticsLab from './components/DiagnosticsLab';
+import Certificates from './components/Certificates';
 import SkillsEducation from './components/SkillsEducation';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ function App() {
   const t = translations[lang];
 
   return (
-    <div className="obscura-app relative bg-[#050507] text-[#FFFFFF] min-h-screen font-sans selection:bg-[#C4A86A] selection:text-[#050507]">
+    <div className="obscura-app relative bg-black text-white min-h-screen font-sans selection:bg-amber-400 selection:text-black">
       {/* 3D WebGL Latent Feature Vector Canvas */}
       <LatentSpaceCanvas />
 
@@ -40,7 +40,7 @@ function App() {
         <About t={t} />
         <Experience t={t} />
         <Projects t={t} />
-        <DiagnosticsLab t={t} />
+        <Certificates t={t} />
         <SkillsEducation t={t} />
         <Contact t={t} onOpenCVModal={() => setShowCVModal(true)} />
       </main>

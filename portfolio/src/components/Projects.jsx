@@ -9,8 +9,6 @@ const Projects = ({ t }) => {
 
   const filteredProjects = activeFilter === 'All' || activeFilter === 'Tümü'
     ? t.projects.items
-    : activeFilter === 'Featured' || activeFilter === 'Öne Çıkanlar'
-    ? t.projects.items.filter(p => p.isFeatured)
     : t.projects.items.filter(p => p.category === activeFilter);
 
   return (
@@ -52,17 +50,28 @@ const Projects = ({ t }) => {
           {filteredProjects.map((project) => (
             <div 
               key={project.id}
-              className="p-8 md:p-10 rounded-[36px] bg-zinc-950 border border-white/10 hover:border-amber-400/50 transition-all duration-500 flex flex-col justify-between shadow-2xl group"
+              className="p-8 md:p-10 rounded-[36px] bg-zinc-950 border border-white/10 hover:border-amber-400/50 transition-all duration-500 flex flex-col justify-between shadow-2xl group overflow-hidden"
             >
               <div>
-                <div className="flex justify-between items-center mb-6">
+                {/* Project Image Preview if exists */}
+                {project.image && (
+                  <div className="w-full aspect-video rounded-2xl overflow-hidden mb-6 border border-white/10 bg-black">
+                    <img 
+                      src={project.image} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+
+                <div className="flex justify-between items-center mb-4">
                   <span className="font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">
                     {project.category}
                   </span>
                   <span className="font-mono text-xs text-zinc-500">{project.date}</span>
                 </div>
 
-                <h3 className="font-sans text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors mb-2">
+                <h3 className="font-sans text-2xl md:text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors mb-2">
                   {project.title}
                 </h3>
                 <p className="font-sans text-xs text-amber-300 font-bold uppercase tracking-wider mb-4">
